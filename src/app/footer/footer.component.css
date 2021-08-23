@@ -5,3 +5,21 @@ footer {
     border-top: 3px solid #000;
     text-align: left;
 }
+
+footer > * {
+    padding: 0 1em;
+}
+
+.footer--update {
+    color: red;
+    font-weight: bold;
+    font-size: 0.65em;
+    background-color: white;
+    border: black 1px solid;
+    border-radius: 0.2em;
+    padding: 0.35em;
+}
+
+.footer--update::after {
+    content: " Update Needed";
+}
