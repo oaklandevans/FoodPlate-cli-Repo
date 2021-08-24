@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { User } from './models/User';
 import { UserService } from './services/user.service';
@@ -10,7 +10,7 @@ import { UserService } from './services/user.service';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
-
+  @Input()
   user: User;
 
   constructor( private userService: UserService, private titleService: Title ) {}

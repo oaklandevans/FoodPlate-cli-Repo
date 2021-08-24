@@ -10,7 +10,7 @@ export class UserService {
 
   private user: User = new User(
     1, 'Oakland', 'M', '32+', 'M32+', {},
-    {fruitMet: false, vegMet: false, proteinMet: false, grainMet: false}, false, 'kevin@kevinruse.com'
+    {fruitMet: true, vegMet: false, proteinMet: true, grainMet: false}, false, 'oaklandevans@yahoo.com'
   );
 
   getUser(): User {
