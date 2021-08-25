@@ -12,6 +12,11 @@ import { PlateComponent } from './plate/plate.component';
 import { MessageComponent } from './message/message.component';
 import { FoodGroupsModule } from './food-groups/food-groups.module';
 import { NavComponent } from './nav/nav.component';
+import { RegisterComponent } from './register/register.component';
+import { DefaultComponent } from './components/default/default.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ExercisesComponent } from './exercises/exercises.component';
+import { FarmersMarketsComponent } from './farmers-markets/farmers-markets.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +27,17 @@ import { NavComponent } from './nav/nav.component';
     HomeBtnComponent,
     PlateComponent,
     MessageComponent,
-    NavComponent
+    NavComponent,
+    RegisterComponent,
+    DefaultComponent,
+    ExercisesComponent,
+    FarmersMarketsComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
-    FoodGroupsModule
+    FoodGroupsModule,
+    AppRoutingModule
   ],
   bootstrap: [ AppComponent ]
 })
