@@ -10,8 +10,9 @@ ul {
     justify-content: center;
 }
 
-li {
+li > a {
     color: #fff;
+    text-decoration: none;
     display: inline;
     background-image: url(../../assets/images/icons/diamond.svg);
     background-position: right center;
@@ -21,7 +22,7 @@ li {
     cursor: pointer;
 }
 
-.active {
+nav ul li a.active {
     color: #ef952b;
 }
 
