@@ -35,7 +35,8 @@ export class RegisterComponent implements OnInit {
         'email': [null, Validators.compose([Validators.required, Validators.email])],
         'gender': [null, [Validators.required]],
         'ageGroup': [null, [Validators.required]]
-      }
+      },
+      { updateOn: 'blur' }
     );
   }
 
