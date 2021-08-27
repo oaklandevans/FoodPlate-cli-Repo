@@ -1,3 +1,6 @@
 <section>
-    <p> {{ (user.reqsStatus.fruitMet) ? 'You have eaten all of your fruit' : ''}} {{ (user.reqsStatus.proteinMet) ? 'You have eaten all of your protein' : ''}}</p>
+    <p>{{ (currentUser.reqsStatus.fruitMet) ? 'You have eaten all of your fruit' : ''}}</p>
+    <p>{{ (currentUser.reqsStatus.vegMet) ? 'You have eaten all of your vegetables' : ''}}</p>
+    <p>{{ (currentUser.reqsStatus.proteinMet) ? 'You have eaten all of your protein' : ''}}</p>
+    <p>{{ (currentUser.reqsStatus.grainMet) ? 'You have eaten all of your grains' : ''}}</p>
 </section>
