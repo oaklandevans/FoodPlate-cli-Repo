@@ -18,6 +18,7 @@ import { DefaultComponent } from './components/default/default.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ExercisesComponent } from './exercises/exercises.component';
 import { FarmersMarketsComponent } from './farmers-markets/farmers-markets.component';
+import { TodaysGoalComponent } from './todays-goal/todays-goal.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { FarmersMarketsComponent } from './farmers-markets/farmers-markets.compo
     RegisterComponent,
     DefaultComponent,
     ExercisesComponent,
-    FarmersMarketsComponent
+    FarmersMarketsComponent,
+    TodaysGoalComponent
   ],
   imports: [
     CommonModule,
