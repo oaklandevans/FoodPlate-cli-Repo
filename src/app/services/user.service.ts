@@ -31,7 +31,7 @@ export class UserService {
     }
   }
 
-  updateUser(user: User) {
+  updateUser( user: User ) {
     user.id = 1;
     user.registered = true;
     user.reqsStatus = {
