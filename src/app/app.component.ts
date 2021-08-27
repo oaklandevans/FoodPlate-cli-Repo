@@ -10,13 +10,17 @@ import { UserService } from './services/user.service';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
-  @Input()
-  user: User;
+  // @Input()
+  // user: User;
+  currentUser: User;
 
-  constructor( private userService: UserService, private titleService: Title ) {}
+  constructor(private userService: UserService, private titleService: Title) { }
 
   ngOnInit() {
     this.titleService.setTitle('Welcome to FoodPlate! ');
-    this.user = this.userService.getUser();
+    // this.user = this.userService.getUser();
+    this.userService.getUser();
+    this.userService.currentUser
+      .subscribe(user => this.currentUser = user);
   }
 }
