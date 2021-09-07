@@ -1,12 +1,13 @@
 import { HttpClient, HttpEventType, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FoodService {
 
-  private foodUrl: string = 'http://localhost:3000/foodItems';
+  private foodUrl: string = 'http://localhost:3004/foodItems';
   foodRequest = new HttpRequest(
     'GET',
     this.foodUrl,
@@ -14,11 +15,13 @@ export class FoodService {
   );
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.getAllFoods();
+  }
 
 
-  loadFood() {
-    return this.http.get(this.foodUrl);
+  getAllFoods<Food>(): Observable<Food> {
+    return this.http.get<Food>(this.foodUrl);
   }
 
   getFoodsProgress() {
