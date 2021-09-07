@@ -23,6 +23,7 @@ export class RegisterComponent implements OnInit {
     '51+'
   ];
   regForm: FormGroup;
+  submit: boolean;
 
   constructor(
     private userService: UserService,
@@ -35,19 +36,25 @@ export class RegisterComponent implements OnInit {
         'email': [null, Validators.compose([Validators.required, Validators.email])],
         'gender': [null, [Validators.required]],
         'ageGroup': [null, [Validators.required]]
-      },
-      { updateOn: 'blur' }
+      }
     );
-  }
-
-  onSubmit(formValues) {
-    this.userService.updateUser(formValues);
-    UserService.storeUserLocal(formValues);
   }
 
   ngOnInit(): void {
     this.userService.currentUser.subscribe(user => this.currentUser = user);
     this.regForm.valueChanges.subscribe(value => console.log(value));
+  }
+
+  onSubmit(formValues) {
+    this.submit = true;
+    this.userService.updateUser(formValues);
+    UserService.storeUserLocal(formValues);
+    this.router.navigate(['myPlate']);
+  }
+
+  canDeactivate() {
+    console.log(!this.regForm.touched);
+    return (!this.regForm.touched || this.submit);
   }
 
 }

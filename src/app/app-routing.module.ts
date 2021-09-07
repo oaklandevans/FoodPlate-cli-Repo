@@ -8,6 +8,7 @@ import { foodGroupsRoutes } from "./food-groups/food-groups.routing";
 import { FoodComponent } from "./food/food.component";
 import { PlateComponent } from "./plate/plate.component";
 import { RegisterComponent } from "./register/register.component";
+import { LeaveRegisterGuardService } from "./services/leave-register-guard.service";
 import { RegisterGuardService } from "./services/register-guard.service";
 
 class AllowFullAccessGuard implements CanActivate {
@@ -27,7 +28,7 @@ const routes: Routes = [
         children: [
             { path: '', component: DefaultComponent },
             { path: 'myPlate', component: PlateComponent, canActivate: [ RegisterGuardService ] },
-            { path: 'register', component: RegisterComponent },
+            { path: 'register', component: RegisterComponent, canDeactivate: [ LeaveRegisterGuardService ] },
             { path: 'farmersMarkets', component: FarmersMarketsComponent },
             { path: 'exercises', component: ExercisesComponent },
             { path: 'nutritionInfo', component: FoodComponent },
@@ -45,7 +46,7 @@ const routes: Routes = [
     exports: [
         RouterModule
     ],
-    providers: [ AllowFullAccessGuard, RegisterGuardService ]
+    providers: [ AllowFullAccessGuard, RegisterGuardService, LeaveRegisterGuardService ]
 })
 
 export class AppRoutingModule { }
