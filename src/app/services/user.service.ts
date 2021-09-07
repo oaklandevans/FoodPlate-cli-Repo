@@ -12,7 +12,7 @@ export class UserService {
 
   private user: User = new User(
     1, '', '', '', '', {},
-    { fruitMet: false, vegMet: false, proteinMet: false, grainMet: false }, false, ''
+    { fruitMet: true, vegMet: false, proteinMet: false, grainMet: false }, false, ''
   );
 
   currentUser = new BehaviorSubject<User>(this.user);
@@ -27,6 +27,7 @@ export class UserService {
       this.currentUser = new BehaviorSubject(user);
       return user;
     } else {
+      this.user.reqsStatus.fruitMet = true;
       return this.user;
     }
   }
